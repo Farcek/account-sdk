@@ -1,0 +1,20 @@
+{
+    "name": "accountsystem-sdk",
+    "version": "1.0.0",
+    "description": "account system SKD",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
+    "dependencies": {
+        "jsonwebtoken": "^7.4.0",
+        "request": "^2.81.0"
+    },
+    "devDependencies": {
+        "@types/jsonwebtoken": "^7.2.0",
+        "@types/request": "0.0.42"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "farcek",
+    "license": "ISC"
+}

@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "target": "es5",
+        "lib": [
+            "es6"
+        ],
+        "noImplicitAny": false,
+
+
+        "declaration": true,
+
+
+
+        "sourceMap": true,
+
+        "sourceRoot": "src",
+        "rootDir": "src",
+        "outDir": "lib"
+
+    }
+}
