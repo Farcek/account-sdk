@@ -9,6 +9,14 @@ export interface IOptions {
     clientEncodeKey: string
     clientEncodeKeyPassphrase: string
 }
+
+export interface IResult {
+    at: Date
+    account: string
+    credit: number
+    debit: number
+    note: string
+}
 export class AccountsystemSDK {
 
     baseUrl: string = "";
@@ -84,6 +92,11 @@ export class AccountsystemSDK {
             }
         }
         throw new Error('check account system server');
+    }
+
+    async transaction(account: string, limit?:number){
+         let clientToken = await genKey({ account }, this.clientEncodeKey, this.clientEncodeKeyPassphrase);
+        return await post<IResult[]>(`${this.baseUrl}/transaction`, { account, clientToken, limit : limit || 10 });
     }
 
     async stock(account: string): Promise<{ newPointId: string }> {

@@ -4,6 +4,13 @@ export interface IOptions {
     clientEncodeKey: string;
     clientEncodeKeyPassphrase: string;
 }
+export interface IResult {
+    at: Date;
+    account: string;
+    credit: number;
+    debit: number;
+    note: string;
+}
 export declare class AccountsystemSDK {
     baseUrl: string;
     serverVerifyKey: string;
@@ -17,6 +24,7 @@ export declare class AccountsystemSDK {
         amountowner: number;
         amountarget: number;
     }>;
+    transaction(account: string, limit?: number): Promise<IResult[]>;
     stock(account: string): Promise<{
         newPointId: string;
     }>;
